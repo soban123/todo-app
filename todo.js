@@ -13,6 +13,7 @@ function addnotes(){
    document.getElementById("box0").classList.remove('hide');
    document.getElementById('bigcontainer').classList.add('hide')
 }
+//
 
 function addbox(){
 
