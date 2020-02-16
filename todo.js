@@ -41,7 +41,7 @@ toDoItems.forEach(function(item) {
  function ifchange(){
     var nHTML = '';
     
-    // toDoItems.sort();
+    
    
     
       
