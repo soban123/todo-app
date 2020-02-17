@@ -32,21 +32,41 @@ function addbox(){
 toDoItems.push(notesobj ) ;
 console.log(toDoItems);
 toDoItems.forEach(function(item) {
-    nHTML += '<li>' + item.title + '<br>' + item.Description + '<br>' + item.date + '</li>';
+    nHTML += '<li>' + item.title + '<br>' + item.Description + '<br>' + item.date + ` <button onclick=" deleted('${item.title}')" > click  </button> </li>`;
     console.log('loop')
   });
 
   document.getElementById("box").innerHTML = '<ul>' + nHTML + '</ul>'
  }
 
+ function deleted (val){
+    
+    console.log(val);
+var i = 0 ;
+    toDoItems.forEach(function(item) {
+      
+        if (item.title == val) {
+
+            toDoItems.splice(i , 1);
+          }
+          i++ ;
+      console.log( 'after delete ' , toDoItems);
+      var nHTML = '';
+      toDoItems.forEach(function(item) {
+        nHTML += '<li>' + item.title + '<br>' + item.Description + '<br>' + item.date + ` <button onclick=" deleted('${item.title}')" > click  </button> </li>`;
+        console.log('loop')
+      });
+    
+      document.getElementById("box").innerHTML = '<ul>' + nHTML + '</ul>'
+      });
+
+
+ }
+
  function ifchange(){
     var nHTML = '';
     
     
-   
-    
-      
-
        if (document.getElementById('inputGroupSelect01').value == 1) {
         console.log('date')
         toDoItems.sort((a, b) => b.date - a.date)
